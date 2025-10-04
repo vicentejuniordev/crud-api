@@ -1,6 +1,5 @@
-import express from 'express';
-import 'dotenv/config';
-const app = express();
+import app from "./app.js";
+
 const port = process.env.PORT
 app.listen(port, ()=>{
     console.log(`Server is activated in port ${port}`)
