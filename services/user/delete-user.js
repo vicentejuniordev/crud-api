@@ -1,9 +1,8 @@
+import pool from "../../database/config.js";
+
 const deleteUser = async (id) => {
-    if(id != 2){
-        console.log('user not found');
-    }else{
-        console.log('user deleted')
-    }
+    await pool.query("DELETE FROM users WHERE id = $1", [id]);
+    return { message: "User deleted successfully" };
 };
 
 export default deleteUser;
